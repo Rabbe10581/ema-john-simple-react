@@ -8,7 +8,16 @@ const Product = ({ product, handleAddToCart }) => {
     const { name, img, seller, price, ratings } = product;
     return (
         <div className='product'>
-            <img src={img} alt="" />
+            <img
+                src={img}
+                alt=""
+                onError={(e) => {
+
+                    e.target.setAttribute('src', 'https://i.pinimg.com/originals/4c/0e/fd/4c0efdd7be898125de1a6bf83f041f67.png')
+
+                }}
+
+            />
             <div className='product-info'>
                 <p className='product-name'>{name}</p>
                 <p>Price: ${price}</p>
